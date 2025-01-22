@@ -188,7 +188,10 @@
 
           <div class="d-grid gap-2">
             <button type="submit" class="btn btn-primary" id="submit_btn">
-              <span class="loading spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span
+                class="loading spinner-border spinner-border-sm"
+                aria-hidden="true"
+              ></span>
               <span class="loading" role="status">Loading...</span>
               <span class="loaded">Submit</span>
             </button>
@@ -199,9 +202,7 @@
   </body>
   <script>
     $(document).ready(function () {
-      $("#Name").focus();
-      $("#square").hide();
-      $(".loading").hide();
+      loadDefauts();
       let product_type = $("#product_type");
       product_type.click(function () {
         $("#round").toggle();
@@ -222,13 +223,12 @@
       const form = document.getElementById("create_orders_form");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        $("#submit_btn").attr("disabled", true);
-        $(".loading").toggle();
-        $(".loaded").toggle();
+        loading();
         let submit_url =
           "https://script.google.com/macros/s/AKfycbwMVFZNwhuCXAHf_jz1o5gtxHWDfUYc2-RfJFYH_EkHw7Z_e2qz46aIJmEo1yz-2HUh/exec";
         const form_obj = new FormData(form);
-        let product_type = $("#product_type").attr("checked")=='on' ? "Square" : "Round";
+        let product_type =
+          $("#product_type").attr("checked") == "on" ? "Square" : "Round";
         form_obj.append("product_type", product_type);
         fetch(submit_url, {
           redirect: "follow",
@@ -236,46 +236,25 @@
           body: form_obj,
         }).then(() => {
           console.log("fprm Created Successfully");
-          form.reset();
-          $("#square").hide();
-          $("#submit_btn").removeAttr("disabled");
-          $("#Name").focus();
+          loadDefauts();
         });
       });
     });
 
-    (function ($) {
-      $.fn.inputFilter = function (callback, errMsg) {
-        return this.on(
-          "input keydown keyup mousedown mouseup select contextmenu drop focusout",
-          function (e) {
-            if (callback(this.value)) {
-              // Accepted value
-              if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
-                $(this).removeClass("input-error");
-                this.setCustomValidity("");
-              }
-              this.oldValue = this.value;
-              this.oldSelectionStart = this.selectionStart;
-              this.oldSelectionEnd = this.selectionEnd;
-            } else if (this.hasOwnProperty("oldValue")) {
-              // Rejected value - restore the previous one
-              $(this).addClass("input-error");
-              this.setCustomValidity(errMsg);
-              this.reportValidity();
-              this.value = this.oldValue;
-              this.setSelectionRange(
-                this.oldSelectionStart,
-                this.oldSelectionEnd
-              );
-            } else {
-              // Rejected value - nothing to restore
-              this.value = "";
-            }
-          }
-        );
-      };
-    })(jQuery);
+    function loadDefauts() {
+      document.getElementById("create_orders_form").reset();
+      $("#square").hide();
+      $("#round").show();
+      $("#submit_btn").removeAttr("disabled");
+      $("#Name").focus();
+      $(".loading").hide();
+      $(".loaded").show();
+    }
 
+    function loading() {
+      $("#submit_btn").attr("disabled", true);
+      $(".loading").show();
+      $(".loaded").hide();
+    }
   </script>
 </html>
