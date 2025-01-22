@@ -187,7 +187,11 @@
           </div>
 
           <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary" id="submit_btn">
+              <span class="loading spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span class="loading" role="status">Loading...</span>
+              <span class="loaded">Submit</span>
+            </button>
           </div>
         </div>
       </form>
@@ -195,7 +199,9 @@
   </body>
   <script>
     $(document).ready(function () {
+      $("#Name").focus();
       $("#square").hide();
+      $(".loading").hide();
       let product_type = $("#product_type");
       product_type.click(function () {
         $("#round").toggle();
@@ -216,9 +222,14 @@
       const form = document.getElementById("create_orders_form");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+        $("#submit_btn").attr("disabled", true);
+        $(".loading").toggle();
+        $(".loaded").toggle();
         let submit_url =
           "https://script.google.com/macros/s/AKfycbwMVFZNwhuCXAHf_jz1o5gtxHWDfUYc2-RfJFYH_EkHw7Z_e2qz46aIJmEo1yz-2HUh/exec";
         const form_obj = new FormData(form);
+        let product_type = $("#product_type").attr("checked")=='on' ? "Square" : "Round";
+        form_obj.append("product_type", product_type);
         fetch(submit_url, {
           redirect: "follow",
           method: "POST",
@@ -226,6 +237,9 @@
         }).then(() => {
           console.log("fprm Created Successfully");
           form.reset();
+          $("#square").hide();
+          $("#submit_btn").removeAttr("disabled");
+          $("#Name").focus();
         });
       });
     });
@@ -262,6 +276,6 @@
         );
       };
     })(jQuery);
-    
+
   </script>
 </html>
