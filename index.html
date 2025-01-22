@@ -1,39 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Order Create</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+      integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
+      integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      .input-error {
+        outline: 1px solid red;
       }
-      #order-form {
-        margin: 0 auto;
-        width: 50%;
+      .ui-widget-header {
+        background: #acd3ff;
       }
-      #order-form label {
-        display: block;
-        margin-top: 10px;
+
+      .ui-widget-content .ui-state-default:hover {
+        background: #acd3ff;
+        border-radius: 2px;
       }
-      #order-form input[type="text"] {
-        width: 100%;
+
+      .Customizations {
+        height: 6rem;
       }
     </style>
   </head>
-  <body>
-    <form id="create_orders_form" method="POST">
-      <input name="Email" type="text" placeholder="Email" required />
-      <input name="Name" type="text" placeholder="Name" required />
-      <input name="Phone" type="text" placeholder="Phone Number" required />
-      <input
-        name="Alternate"
-        type="text"
-        placeholder="Alternate Phone Number"
-        required
-      />
-      <button type="submit">Send</button>
-    </form>
+  <body class="">
+    <div>
+      <form id="create_orders_form" method="POST">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-lg-6">
+              <h1>Customer Details</h1>
+              <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Name"
+                  required="true"
+                  name="Name"
+                  aria-describedby="Name"
+                />
+                <div id="Name" class="form-text">Please enter your Name</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="Phone" class="form-label">Phone</label>
+                <input
+                  name="Phone"
+                  type="number"
+                  class="form-control"
+                  id="Phone"
+                  required="true"
+                  aria-describedby="Phone"
+                />
+                <div id="Phone" class="form-text">
+                  Please enter your Phone Number
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="Alternate" class="form-label"
+                  >Alternate Phone</label
+                >
+                <input
+                  name="Alternate"
+                  type="number"
+                  class="form-control"
+                  id="Alternate"
+                  required="true"
+                  aria-describedby="Name"
+                />
+                <div id="Alternate" class="form-text">
+                  Please enter your alternnate phone number
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6">
+              <h1>Order Details</h1>
+              <div class="mb-3">
+                <label for="Customizations" class="form-label"
+                  >Customizations</label
+                >
+                <textarea
+                  name="Customizations"
+                  type="text"
+                  class="form-control Customizations"
+                  id="Customizations"
+                  aria-describedby="Customizations"
+                ></textarea>
+                <div id="Customizations" class="form-text">
+                  (name, date, size, colour, link, etc )
+                </div>
+              </div>
+
+              <div class="form-check form-switch">
+                <input
+                  name="product_type"
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="product_type"
+                />
+                <label class="form-check-label" for="product_type"
+                  >Square</label
+                >
+              </div>
+
+              <div class="mb-3" id="round">
+                <label for="Diameter" class="form-label">Diameter</label>
+                <input
+                  name="Diameter"
+                  type="number"
+                  class="form-control"
+                  id="Diameter"
+                  aria-describedby="Diameter"
+                />
+                <div id="Diameter" class="form-text">
+                  Please enter in inches
+                </div>
+              </div>
+
+              <div class="mb-3" id="square">
+                <div class="row">
+                  <div class="col-5">
+                    <label for="Length" class="form-label">Length</label>
+                    <input
+                      name="Length"
+                      type="number"
+                      class="form-control"
+                      id="Length"
+                      aria-describedby="Length"
+                    />
+                    <div id="Length" class="form-text">
+                      Please Length in inches
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <br />
+                    X
+                  </div>
+                  <div class="col-5">
+                    <label for="Height" class="form-label">Height</label>
+                    <input
+                      name="Height"
+                      type="number"
+                      class="form-control"
+                      id="Height"
+                      aria-describedby="Height"
+                    />
+                    <div id="Height" class="form-text">
+                      Please Length in inches
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
   <script>
+    $(document).ready(function () {
+      $("#square").hide();
+      let product_type = $("#product_type");
+      product_type.click(function () {
+        $("#round").toggle();
+        $("#square").toggle();
+      });
+
+      // $("#Diameter").inputFilter(function (value) {
+      //   return /^\d*$/.test(value);
+      // }, "Must be an unsigned integer");
+
+      $("#delivery_date").datepicker({
+        minDate: -20,
+        maxDate: "+1M",
+        minDate: "+7D",
+      });
+    });
     window.addEventListener("load", function () {
       const form = document.getElementById("create_orders_form");
       form.addEventListener("submit", function (e) {
@@ -51,5 +229,39 @@
         });
       });
     });
+
+    (function ($) {
+      $.fn.inputFilter = function (callback, errMsg) {
+        return this.on(
+          "input keydown keyup mousedown mouseup select contextmenu drop focusout",
+          function (e) {
+            if (callback(this.value)) {
+              // Accepted value
+              if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
+                $(this).removeClass("input-error");
+                this.setCustomValidity("");
+              }
+              this.oldValue = this.value;
+              this.oldSelectionStart = this.selectionStart;
+              this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+              // Rejected value - restore the previous one
+              $(this).addClass("input-error");
+              this.setCustomValidity(errMsg);
+              this.reportValidity();
+              this.value = this.oldValue;
+              this.setSelectionRange(
+                this.oldSelectionStart,
+                this.oldSelectionEnd
+              );
+            } else {
+              // Rejected value - nothing to restore
+              this.value = "";
+            }
+          }
+        );
+      };
+    })(jQuery);
+    
   </script>
 </html>
