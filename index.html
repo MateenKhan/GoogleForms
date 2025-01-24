@@ -49,174 +49,339 @@
       .Customizations {
         height: 6rem;
       }
+      .calculator-container .input-group-text {
+        font-weight: bold;
+      }
     </style>
   </head>
-  <body class="">
-    <div>
-      <form id="create_orders_form" method="POST">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-sm-12 col-lg-6">
-              <h1>Customer Details</h1>
-              <div class="mb-3">
-                <label for="Name" class="form-label">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="Name"
-                  required="true"
-                  name="Name"
-                  aria-describedby="Name"
-                />
-                <div id="Name" class="form-text">Please enter your Name</div>
-              </div>
+  <body>
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="home-tab-pane"
+            aria-selected="true"
+          >
+            Form
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="profile-tab-pane"
+            aria-selected="false"
+          >
+            Calculator
+          </button>
+        </li>
+      </ul>
 
-              <div class="mb-3">
-                <label for="Phone" class="form-label">Phone</label>
-                <input
-                  name="Phone"
-                  type="number"
-                  class="form-control"
-                  id="Phone"
-                  required="true"
-                  aria-describedby="Phone"
-                />
-                <div id="Phone" class="form-text">
-                  Please enter your Phone Number
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="Alternate" class="form-label"
-                  >Alternate Phone</label
-                >
-                <input
-                  name="Alternate"
-                  type="number"
-                  class="form-control"
-                  id="Alternate"
-                  required="true"
-                  aria-describedby="Name"
-                />
-                <div id="Alternate" class="form-text">
-                  Please enter your alternnate phone number
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-12 col-lg-6">
-              <h1>Order Details</h1>
-              <div class="mb-3">
-                <label for="Customizations" class="form-label"
-                  >Customizations</label
-                >
-                <textarea
-                  name="Customizations"
-                  type="text"
-                  class="form-control Customizations"
-                  id="Customizations"
-                  aria-describedby="Customizations"
-                ></textarea>
-                <div id="Customizations" class="form-text">
-                  (name, date, size, colour, link, etc )
-                </div>
-              </div>
-
-              <div class="form-check form-switch">
-                <input
-                  name="product_type"
-                  class="form-check-input"
-                  type="checkbox"
-                  role="switch"
-                  id="product_type"
-                />
-                <label class="form-check-label" for="product_type"
-                  >Square</label
-                >
-              </div>
-
-              <div class="mb-3" id="round">
-                <label for="Diameter" class="form-label">Diameter</label>
-                <input
-                  name="Diameter"
-                  type="number"
-                  class="form-control"
-                  id="Diameter"
-                  aria-describedby="Diameter"
-                />
-                <div id="Diameter" class="form-text">
-                  Please enter in inches
-                </div>
-              </div>
-
-              <div class="mb-3" id="square">
-                <div class="row">
-                  <div class="col-5">
-                    <label for="Length" class="form-label">Length</label>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home-tab-pane"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+          tabindex="0"
+        >
+          <div>
+            <form id="create_orders_form" method="POST">
+              <div class="row align-items-center">
+                <div class="col-sm-12 col-lg-6">
+                  <h1>Customer Details</h1>
+                  <div class="mb-3">
+                    <label for="Name" class="form-label">Name</label>
                     <input
-                      name="Length"
-                      type="number"
+                      type="text"
                       class="form-control"
-                      id="Length"
-                      aria-describedby="Length"
+                      id="Name"
+                      required="true"
+                      name="Name"
+                      aria-describedby="Name"
                     />
-                    <div id="Length" class="form-text">
-                      Please Length in inches
+                    <div id="Name" class="form-text">
+                      Please enter your Name
                     </div>
                   </div>
-                  <div class="col-2">
-                    <br />
-                    X
-                  </div>
-                  <div class="col-5">
-                    <label for="Height" class="form-label">Height</label>
+
+                  <div class="mb-3">
+                    <label for="Phone" class="form-label">Phone</label>
                     <input
-                      name="Height"
+                      name="Phone"
                       type="number"
                       class="form-control"
-                      id="Height"
-                      aria-describedby="Height"
+                      id="Phone"
+                      required="true"
+                      aria-describedby="Phone"
                     />
-                    <div id="Height" class="form-text">
-                      Please Length in inches
+                    <div id="Phone" class="form-text">
+                      Please enter your Phone Number
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="Alternate" class="form-label"
+                      >Alternate Phone</label
+                    >
+                    <input
+                      name="Alternate"
+                      type="number"
+                      class="form-control"
+                      id="Alternate"
+                      required="true"
+                      aria-describedby="Name"
+                    />
+                    <div id="Alternate" class="form-text">
+                      Please enter your alternnate phone number
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary" id="submit_btn">
-              <span
-                class="loading spinner-border spinner-border-sm"
-                aria-hidden="true"
-              ></span>
-              <span class="loading" role="status">Loading...</span>
-              <span class="loaded">Submit</span>
-            </button>
+                <div class="col-sm-12 col-lg-6">
+                  <h1>Order Details</h1>
+                  <div class="mb-3">
+                    <label for="Customizations" class="form-label"
+                      >Customizations</label
+                    >
+                    <textarea
+                      name="Customizations"
+                      type="text"
+                      class="form-control Customizations"
+                      id="Customizations"
+                      aria-describedby="Customizations"
+                    ></textarea>
+                    <div id="Customizations" class="form-text">
+                      (name, date, size, colour, link, etc )
+                    </div>
+                  </div>
+
+                  <div class="form-check form-switch">
+                    <input
+                      name="product_type"
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="product_type"
+                    />
+                    <label class="form-check-label" for="product_type"
+                      >Square</label
+                    >
+                  </div>
+
+                  <div class="mb-3" id="round">
+                    <label for="Diameter" class="form-label">Diameter</label>
+                    <input
+                      name="Diameter"
+                      type="number"
+                      class="form-control"
+                      id="Diameter"
+                      aria-describedby="Diameter"
+                    />
+                    <div id="Diameter" class="form-text">
+                      Please enter in inches
+                    </div>
+                  </div>
+
+                  <div class="mb-3" id="square">
+                    <div class="row">
+                      <div class="col-5">
+                        <label for="Length" class="form-label">Length</label>
+                        <input
+                          name="Length"
+                          type="number"
+                          class="form-control"
+                          id="Length"
+                          aria-describedby="Length"
+                        />
+                        <div id="Length" class="form-text">
+                          Please Length in inches
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <br />
+                        X
+                      </div>
+                      <div class="col-5">
+                        <label for="Height" class="form-label">Height</label>
+                        <input
+                          name="Height"
+                          type="number"
+                          class="form-control"
+                          id="Height"
+                          aria-describedby="Height"
+                        />
+                        <div id="Height" class="form-text">
+                          Please Length in inches
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" id="submit_btn">
+                  <span
+                    class="loading spinner-border spinner-border-sm"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="loading" role="status">Loading...</span>
+                  <span class="loaded">Submit</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-      </form>
+
+        <div
+          class="tab-pane fade"
+          id="profile-tab-pane"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+          tabindex="0"
+        >
+          <div class="col-sm-12 col-lg-6 calculator-container">
+            <h1>Resign Calculator</h1>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="epoxy_type"
+                >Product Type</label
+              >
+              <select class="form-select" id="epoxy_type">
+                <option value="square" selected>Square</option>
+                <option value="round">Round</option>
+              </select>
+            </div>
+
+            <div class="input-group mb-3" id="round_div">
+              <span class="input-group-text" id="e_s_Diameter"
+                >Diameter - "</span
+              >
+              <input
+                type="number"
+                class="form-control"
+                placeholder="diameter"
+                aria-label="Diameter"
+                aria-describedby="Diameter"
+                id="e_Diameter"
+              />
+              <span class="input-group-text">"</span>
+            </div>
+            <div id="square_div">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="e_s_length">Length - "</span>
+                <input
+                  id="e_length"
+                  type="number"
+                  class="form-control"
+                  placeholder="length"
+                  aria-label="Length"
+                  aria-describedby="length"
+                />
+                <span class="input-group-text">"</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="e_s_width">Width - "</span>
+                <input
+                  id="e_width"
+                  type="number"
+                  class="form-control"
+                  placeholder="width"
+                  aria-label="Width"
+                  aria-describedby="width"
+                />
+                <span class="input-group-text">"</span>
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="width"
+                >Coating Thickness - "</span
+              >
+              <input
+                id="e_coating"
+                type="number"
+                class="form-control"
+                placeholder="coating"
+                aria-label="Coating"
+                aria-describedby="coating"
+              />
+              <span class="input-group-text">"</span>
+            </div>
+
+            <div class="input-group mb-3">
+              <button class="btn btn-primary" type="button" id="Calculate">
+                Calculate
+              </button>
+              <input
+                id="e_liters"
+                type="text"
+                readonly="true"
+                class="form-control"
+                placeholder="epoxy liters for your product"
+                aria-label="epoxy liters for your product"
+                aria-describedby="Calculate"
+              />
+              <span class="input-group-text">liters</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
     $(document).ready(function () {
       loadDefauts();
       let product_type = $("#product_type");
+      let epoxy_type = $("#epoxy_type");
       product_type.click(function () {
         $("#round").toggle();
         $("#square").toggle();
       });
 
-      // $("#Diameter").inputFilter(function (value) {
-      //   return /^\d*$/.test(value);
-      // }, "Must be an unsigned integer");
+      epoxy_type.change(function () {
+        let val = $(this).val();
+        if (val == "square") {
+          $("#round_div").hide();
+          $("#square_div").show();
+        } else {
+          $("#round_div").show();
+          $("#square_div").hide();
+        }
+      });
 
       $("#delivery_date").datepicker({
         minDate: -20,
         maxDate: "+1M",
         minDate: "+7D",
+      });
+
+      $("#Calculate").click(function () {
+        let epoxy_type = $("#epoxy_type").val();
+        let diameter = $("#e_Diameter").val();
+        let length = $("#e_length").val();
+        let width = $("#e_width").val();
+        let coating = $("#e_coating").val();
+        let epoxy_liters = 0;
+        if (epoxy_type == "square") {
+          epoxy_liters = (length * width * coating) / 62;
+        } else {
+          epoxy_liters =
+            (3.14 * (diameter / 2) * (diameter / 2) * coating) / 62;
+        }
+        $("#e_liters").val(epoxy_liters);
       });
     });
     window.addEventListener("load", function () {
@@ -249,6 +414,7 @@
       $("#Name").focus();
       $(".loading").hide();
       $(".loaded").show();
+      $("#round_div").hide();
     }
 
     function loading() {
