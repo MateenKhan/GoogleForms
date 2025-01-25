@@ -1,474 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
-      rel="stylesheet"
-    />
-    <title>Bootstrap Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
-      integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
-      integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="main-title">Cresent Crafts Hyderabad</h1>
-      <ul class="nav nav-tabs menu-list" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link active"
-            id="home-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#home-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="home-tab-pane"
-            aria-selected="true"
-          >
-            Form
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="profile-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#profile-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="profile-tab-pane"
-            aria-selected="false"
-          >
-            Calculator
-          </button>
-        </li>
-      </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+    integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css"
+    integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <div class="tab-content tabs-container" id="myTabContent">
-        <div
-          class="tab-pane fade show active form-tab"
-          id="home-tab-pane"
-          role="tabpanel"
-          aria-labelledby="home-tab"
-          tabindex="0"
-        >
-          <div class="form-container">
-            <form id="create_orders_form" method="POST">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-lg-6">
-                  <h2>Customer Details</h2>
-                  <div class="input-group mb-3">
-                    <label for="Name" class="input-group-text">Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="Name"
-                      placeholder="Start typing..."
-                      required="true"
-                      name="Name"
-                      aria-describedby="Name"
-                    />
-                  </div>
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-                  <div class="input-group mb-3">
-                    <label for="Phone" class="input-group-text">Phone</label>
-                    <input
-                      name="Phone"
-                      type="number"
-                      class="form-control"
-                      id="Phone"
-                      required="true"
-                      aria-describedby="Phone"
-                    />
-                  </div>
+<body>
+  <div class="container">
+    <h1 class="main-title">Cresent Crafts Hyderabad</h1>
+    <ul class="nav nav-tabs menu-list" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">
+          Form
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+          Calculator
+        </button>
+      </li>
+    </ul>
 
-                  <div class="input-group mb-3">
-                    <label for="Alternate" class="input-group-text"
-                      >Alternate Phone</label
-                    >
-                    <input
-                      name="Alternate"
-                      type="number"
-                      class="form-control"
-                      id="Alternate"
-                      required="true"
-                      aria-describedby="Alternate"
-                    />
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <label for="delivery_date" class="input-group-text"
-                      >Delivery Date</label
-                    >
-                    <input
-                      name="delivery_date"
-                      type="text"
-                      class="form-control"
-                      id="delivery_date"
-                      required="true"
-                      aria-describedby="delivery_date"
-                    />
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <label for="Address" class="input-group-text"
-                      >Shipping Address</label
-                    >
-                    <textarea
-                      name="Address"
-                      class="form-control"
-                      id="address"
-                      required="true"
-                      aria-describedby="Address"
-                    ></textarea>
-                  </div>
+    <div class="tab-content tabs-container" id="myTabContent">
+      <div class="tab-pane fade show active form-tab" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+        tabindex="0">
+        <div class="form-container">
+          <form id="create_orders_form" method="POST">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-lg-6">
+                <h2>Customer Details</h2>
+                <div class="input-group mb-3">
+                  <label for="Name" class="input-group-text">Name</label>
+                  <input type="text" class="form-control" id="Name" placeholder="Start typing..." required="true"
+                    name="Name" aria-describedby="Name" />
                 </div>
 
-                <div class="col-sm-12 col-lg-6">
-                  <h2>Order Details</h2>
+                <div class="input-group mb-3">
+                  <label for="Phone" class="input-group-text">Phone</label>
+                  <input name="Phone" type="number" class="form-control" id="Phone" required="true"
+                    aria-describedby="Phone" />
+                </div>
 
-                  <div class="accordion">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#item1"
-                          aria-expanded="true"
-                        >
-                          Item #<span class="item-number">1</span>
-                        </button>
-                      </h2>
-                      <div id="item1" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                          <div class="mb-3">
-                            <label for="Customizations" class="form-label"
-                              >Customizations</label
-                            >
-                            <textarea
-                              name="Customizations"
-                              type="text"
-                              class="form-control Customizations"
-                              id="Customizations"
-                              aria-describedby="Customizations"
-                            ></textarea>
-                            <div id="Customizations" class="form-text">
-                              (name, date, size, colour, link, etc )
+                <div class="input-group mb-3">
+                  <label for="Alternate" class="input-group-text">Alternate Phone</label>
+                  <input name="Alternate" type="number" class="form-control" id="Alternate" required="true"
+                    aria-describedby="Alternate" />
+                </div>
+
+                <div class="input-group mb-3">
+                  <label for="delivery_date" class="input-group-text">Delivery Date</label>
+                  <input name="delivery_date" type="text" class="form-control" id="delivery_date" required="true"
+                    aria-describedby="delivery_date" />
+                </div>
+
+                <div class="input-group mb-3">
+                  <label for="Address" class="input-group-text">Shipping Address</label>
+                  <textarea name="Address" class="form-control" id="address" required="true"
+                    aria-describedby="Address"></textarea>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-lg-6">
+                <h2>Order Details</h2>
+
+                <div class="accordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#item1"
+                        aria-expanded="true">
+                        Item #<span class="item-number">1</span>
+                      </button>
+                    </h2>
+                    <div id="item1" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <div class="mb-3">
+                          <label for="Customizations" class="form-label">Customizations</label>
+                          <textarea name="Customizations" type="text" class="form-control Customizations"
+                            id="Customizations" aria-describedby="Customizations"></textarea>
+                          <div id="Customizations" class="form-text">
+                            (name, date, size, colour, link, etc )
+                          </div>
+                        </div>
+
+                        <div class="form-check form-switch">
+                          <input name="product_type" class="form-check-input product_type" type="checkbox"
+                            role="switch" />
+                          <label class="form-check-label" for="product_type">Square</label>
+                        </div>
+
+                        <div class="mb-3 round">
+                          <label for="Diameter" class="form-label">Diameter</label>
+                          <input name="Diameter" type="number" class="form-control i_diameter"
+                            aria-describedby="Diameter" />
+                          <div class="form-text">Please enter in inches</div>
+                        </div>
+
+                        <div class="mb-3 square">
+                          <div class="row">
+                            <div class="col-5">
+                              <label for="Length" class="form-label length">Length</label>
+                              <input name="Length" type="number" class="form-control i_length"
+                                aria-describedby="Length" />
+                              <div class="form-text">
+                                Please Length in inches
+                              </div>
                             </div>
-                          </div>
-
-                          <div class="form-check form-switch">
-                            <input
-                              name="product_type"
-                              class="form-check-input product_type"
-                              type="checkbox"
-                              role="switch"
-                            />
-                            <label class="form-check-label" for="product_type"
-                              >Square</label
-                            >
-                          </div>
-
-                          <div class="mb-3 round">
-                            <label for="Diameter" class="form-label"
-                              >Diameter</label
-                            >
-                            <input
-                              name="Diameter"
-                              type="number"
-                              class="form-control i_diameter"
-                              aria-describedby="Diameter"
-                            />
-                            <div class="form-text">Please enter in inches</div>
-                          </div>
-
-                          <div class="mb-3 square">
-                            <div class="row">
-                              <div class="col-5">
-                                <label for="Length" class="form-label length"
-                                  >Length</label
-                                >
-                                <input
-                                  name="Length"
-                                  type="number"
-                                  class="form-control i_length"
-                                  aria-describedby="Length"
-                                />
-                                <div class="form-text">
-                                  Please Length in inches
-                                </div>
-                              </div>
-                              <div class="col-2">
-                                <br />
-                                X
-                              </div>
-                              <div class="col-5">
-                                <label for="Height" class="form-label height"
-                                  >Height</label
-                                >
-                                <input
-                                  name="Height"
-                                  type="number"
-                                  class="form-control i_height"
-                                  aria-describedby="Height"
-                                />
-                                <div class="form-text">
-                                  Please Length in inches
-                                </div>
+                            <div class="col-2">
+                              <br />
+                              X
+                            </div>
+                            <div class="col-5">
+                              <label for="Height" class="form-label height">Height</label>
+                              <input name="Height" type="number" class="form-control i_height"
+                                aria-describedby="Height" />
+                              <div class="form-text">
+                                Please Length in inches
                               </div>
                             </div>
                           </div>
+                        </div>
 
-                          <div class="mb-3 coating">
-                            <label for="O_Coating" class="form-label"
-                              >Coating Thickness</label
-                            >
-                            <input
-                              name="O_Coating"
-                              type="number"
-                              class="form-control i_Coating"
-                              aria-describedby="O_Coating"
-                            />
-                            <div id="O_Coating" class="form-text">
-                              Please enter in inches
-                            </div>
+                        <div class="mb-3 coating">
+                          <label for="O_Coating" class="form-label">Coating Thickness</label>
+                          <input name="O_Coating" type="number" class="form-control i_Coating"
+                            aria-describedby="O_Coating" />
+                          <div id="O_Coating" class="form-text">
+                            Please enter in inches
                           </div>
+                        </div>
 
-                          <div class="input-group mb-3">
-                            <button
-                              class="btn btn-primary calculate_price"
-                              type="button"
-                            >
-                              Calculate Price
-                            </button>
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder=" <== click this button"
-                              aria-label="<== click this button"
-                              aria-describedby="Calculate"
-                            />
-                            <span class="input-group-text">₹</span>
-                          </div>
+                        <div class="input-group mb-3">
+                          <button class="btn btn-primary calculate_price" type="button">
+                            Calculate Price
+                          </button>
+                          <input type="text" class="form-control" placeholder=" <== click this button"
+                            aria-label="<== click this button" aria-describedby="Calculate" />
+                          <span class="input-group-text">₹</span>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="pt-2 row align-items-center">
-                    <div class="col-1"></div>
-                    <button
-                      type="button"
-                      class="col-10 btn btn-primary btn-lg"
-                      id="add_item"
-                    >
-                      Add Item
-                    </button>
-                    <div class="col-1"></div>
-                  </div>
+                <div class="pt-2 row align-items-center">
+                  <div class="col-1"></div>
+                  <button type="button" class="col-10 btn btn-primary btn-lg" id="add_item">
+                    Add Item
+                  </button>
+                  <div class="col-1"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-items row align-items-center mt-2">
+              <div class="col-1"></div>
+              <button type="submit" class="col-4 btn btn-success btn-lg" id="submit_btn">
+                <span class="loading spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span class="loading" role="status">Loading...</span>
+                <span class="loaded">Submit</span>
+              </button>
+              <div class="col-2"></div>
+              <button type="button" class="col-4 btn btn-primary btn-lg" id="save_btn">
+                <span class="loading spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span class="loading" role="status">Loading...</span>
+                <span class="loaded">Save</span>
+              </button>
+              <div class="col-1"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="tab-pane fade calculator-tab" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+        tabindex="0">
+        <div class="row align-items-center">
+          <div class="col-sm-12 col-lg-6 calculator-container-1">
+            <form id="calculator_form">
+              <h2>Resign Calculator</h2>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="epoxy_type">Product Type</label>
+                <select class="form-select" id="epoxy_type">
+                  <option value="square" selected>Square</option>
+                  <option value="round">Round</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3" id="round_div">
+                <span class="input-group-text" id="e_s_Diameter">Diameter - "</span>
+                <input type="number" class="form-control" placeholder="diameter" aria-label="Diameter"
+                  aria-describedby="Diameter" id="e_Diameter" />
+                <span class="input-group-text">"</span>
+              </div>
+              <div id="square_div">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="e_s_length">Length - "</span>
+                  <input id="e_length" type="number" class="form-control" placeholder="length" aria-label="Length"
+                    aria-describedby="length" />
+                  <span class="input-group-text">"</span>
+                </div>
+
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="e_s_width">Height - "</span>
+                  <input id="e_width" type="number" class="form-control" placeholder="height" aria-label="Height"
+                    aria-describedby="height" />
+                  <span class="input-group-text">"</span>
                 </div>
               </div>
 
-              <div class="action-items row align-items-center mt-2">
-                <div class="col-1"></div>
-                <button
-                  type="submit"
-                  class="col-4 btn btn-success btn-lg"
-                  id="submit_btn"
-                >
-                  <span
-                    class="loading spinner-border spinner-border-sm"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="loading" role="status">Loading...</span>
-                  <span class="loaded">Submit</span>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="width">Coating Thickness - "</span>
+                <input id="e_coating" type="number" class="form-control" placeholder="coating" aria-label="Coating"
+                  aria-describedby="coating" />
+                <span class="input-group-text">"</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <button class="btn btn-primary" type="submit" id="Calculate">
+                  Calculate
                 </button>
-                <div class="col-2"></div>
-                <button
-                  type="button"
-                  class="col-4 btn btn-primary btn-lg"
-                  id="save_btn"
-                >
-                  <span
-                    class="loading spinner-border spinner-border-sm"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="loading" role="status">Loading...</span>
-                  <span class="loaded">Save</span>
+                <input id="e_liters" type="text" readonly="true" class="form-control"
+                  placeholder="epoxy liters for your product" aria-label="epoxy liters for your product"
+                  aria-describedby="Calculate" />
+                <span class="input-group-text">liters</span>
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-12 col-lg-6 calculator-container-2">
+            <form id="calculator_form_2">
+              <h2>Price Calculator</h2>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="width">Price Per Liter</span>
+                <input id="liter_price" type="number" class="form-control" value="4000" />
+              </div>
+
+              <div class="input-group mb-3">
+                <button class="btn btn-primary" type="submit" id="price_calculate">
+                  Calculate
                 </button>
-                <div class="col-1"></div>
+                <input id="price" type="text" readonly="true" class="form-control" placeholder="estimate price"
+                  aria-label="estimate price" aria-describedby="Calculate" />
+                <span class="input-group-text">₹</span>
               </div>
             </form>
           </div>
         </div>
-
-        <div
-          class="tab-pane fade calculator-tab"
-          id="profile-tab-pane"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
-          tabindex="0"
-        >
-          <div class="row align-items-center">
-            <div class="col-sm-12 col-lg-6 calculator-container-1">
-              <form id="calculator_form">
-                <h2>Resign Calculator</h2>
-
-                <div class="input-group mb-3">
-                  <label class="input-group-text" for="epoxy_type"
-                    >Product Type</label
-                  >
-                  <select class="form-select" id="epoxy_type">
-                    <option value="square" selected>Square</option>
-                    <option value="round">Round</option>
-                  </select>
-                </div>
-
-                <div class="input-group mb-3" id="round_div">
-                  <span class="input-group-text" id="e_s_Diameter"
-                    >Diameter - "</span
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="diameter"
-                    aria-label="Diameter"
-                    aria-describedby="Diameter"
-                    id="e_Diameter"
-                  />
-                  <span class="input-group-text">"</span>
-                </div>
-                <div id="square_div">
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="e_s_length"
-                      >Length - "</span
-                    >
-                    <input
-                      id="e_length"
-                      type="number"
-                      class="form-control"
-                      placeholder="length"
-                      aria-label="Length"
-                      aria-describedby="length"
-                    />
-                    <span class="input-group-text">"</span>
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="e_s_width"
-                      >Height - "</span
-                    >
-                    <input
-                      id="e_width"
-                      type="number"
-                      class="form-control"
-                      placeholder="height"
-                      aria-label="Height"
-                      aria-describedby="height"
-                    />
-                    <span class="input-group-text">"</span>
-                  </div>
-                </div>
-
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="width"
-                    >Coating Thickness - "</span
-                  >
-                  <input
-                    id="e_coating"
-                    type="number"
-                    class="form-control"
-                    placeholder="coating"
-                    aria-label="Coating"
-                    aria-describedby="coating"
-                  />
-                  <span class="input-group-text">"</span>
-                </div>
-
-                <div class="input-group mb-3">
-                  <button class="btn btn-primary" type="submit" id="Calculate">
-                    Calculate
-                  </button>
-                  <input
-                    id="e_liters"
-                    type="text"
-                    readonly="true"
-                    class="form-control"
-                    placeholder="epoxy liters for your product"
-                    aria-label="epoxy liters for your product"
-                    aria-describedby="Calculate"
-                  />
-                  <span class="input-group-text">liters</span>
-                </div>
-              </form>
-            </div>
-            <div class="col-sm-12 col-lg-6 calculator-container-2">
-              <form id="calculator_form_2">
-                <h2>Price Calculator</h2>
-
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="width"
-                    >Price Per Liter</span
-                  >
-                  <input
-                    id="liter_price"
-                    type="number"
-                    class="form-control"
-                    value="4000"
-                  />
-                </div>
-
-                <div class="input-group mb-3">
-                  <button
-                    class="btn btn-primary"
-                    type="submit"
-                    id="price_calculate"
-                  >
-                    Calculate
-                  </button>
-                  <input
-                    id="price"
-                    type="text"
-                    readonly="true"
-                    class="form-control"
-                    placeholder="estimate price"
-                    aria-label="estimate price"
-                    aria-describedby="Calculate"
-                  />
-                  <span class="input-group-text">₹</span>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </body>
-  <script src="/script.js" type="text/javascript"></script>
+  </div>
+</body>
+<script src="./script.js" type="text/javascript"></script>
+
 </html>
