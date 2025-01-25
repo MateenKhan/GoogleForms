@@ -1,0 +1,47 @@
+.input-error {
+    outline: 1px solid red;
+  }
+  .ui-widget-header {
+    background: #acd3ff;
+  }
+
+  .ui-widget-content .ui-state-default:hover {
+    background: #acd3ff;
+    border-radius: 2px;
+  }
+
+  .Customizations {
+    height: 8rem;
+  }
+
+  #address {
+    height: 7rem;
+  }
+  .input-group-text {
+    font-weight: bold;
+    color: blueviolet;
+  }
+
+  .main-title {
+    text-align: center;
+    margin-top: 20px;
+  }
+  nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    color: var(--bs-green);
+    font-size: larger;
+    font-weight: 500;
+  }
+  .tab-content > .tab-pane {
+    padding-top: 1rem;
+  }
+  .main-title {
+    text-align: center;
+    margin-top: 20px;
+    font-family: cursive;
+    font-style: italic;
+    color: #833400;
+  }
+  body {
+    background-color: #64acbb !important;
+  }
