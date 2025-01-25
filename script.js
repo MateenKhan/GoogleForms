@@ -7,8 +7,9 @@ $(document).ready(function () {
     var defArr = [];
     defArr.push($.get('./home.html'));
     defArr.push($.get('./calculator.html'));
-    $.when.apply($, defArr).done(function (response1, response2) {
-        $('#myTabContent').html(response1[2].responseText + response2[2].responseText);
+    defArr.push($.get('./invoice.html'));
+    $.when.apply($, defArr).done(function (response1, response2, response3) {
+        $('#myTabContent').html(response1[2].responseText + response2[2].responseText+ response3[2].responseText);
         webPageLoaded();
     });
 
