@@ -153,7 +153,7 @@ function calculatePrice() {
     let price = 0;
     let epoxy_liters = $("#e_liters").val();
     let liter_price = $("#liter_price").val();
-    price = epoxy_liters * liter_price;
+    price = (epoxy_liters/1000) * liter_price;
     $("#price").val(price);
 }
 
