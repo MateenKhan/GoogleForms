@@ -165,7 +165,7 @@ function calculateEpoxyResign() {
     let coating = $("#e_coating").val();
     let epoxy_liters = 0;
     if (epoxy_type == "square") {
-        epoxy_liters = (length * width * coating) / 62;
+        epoxy_liters = (length * width * coating) / 1.54;
     } else {
         epoxy_liters = (3.14 * (diameter / 2) * (diameter / 2) * coating) / 62;
     }
