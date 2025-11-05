@@ -61,5 +61,5 @@ body {
 }
 
 #sqft_price_div{
-  display: hidden;
+  display: none;
 }
