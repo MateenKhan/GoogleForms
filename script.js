@@ -72,6 +72,16 @@ function webPageLoaded(){
     $(".calculate_price").click(function () {
         O_calculatePrice($(this));
     });
+
+    $(".sqft_type").change(function () {
+        if($(this).val()=="sqft"){
+            $("#sqft_price_div").show();
+        } else {
+            $("#sqft_price_div").hide();
+        }
+    });
+
+    
     const form = document.getElementById("create_orders_form");
     const calculator_form = document.getElementById("calculator_form");
     const calculator_form_2 = document.getElementById("calculator_form_2");
@@ -192,11 +202,14 @@ function calculateSqft(e){
     let diameter = $("#sqft_Diameter").val();
     let length = $("#sqft_length").val();
     let width = $("#sqft_width").val();
+    let qty = $("#sqft_qty").val();
     let sqft = 0;
     if (sqft_type == "square") {
-        sqft = (length * width ) / 144;
+        sqft = qty * ((length * width ) / 144);
+    } else if (sqft_type == "box") {
+        sqft = qty * ((length * width ) / 144);
     } else {
-        sqft = (3.14 * (diameter / 2) * (diameter / 2) ) / 144;
+        sqft = qty * ((3.14 * (diameter / 2) * (diameter / 2) ) / 144);
     }
     $("#sqft").val(sqft);
 }
@@ -204,8 +217,13 @@ function calculateSqft(e){
 function calculatePrice(e){
     calculateSqft(e);
     let sqft = $("#sqft").val();
+    let material_price;
+    if (sqft_type == "box") {
+        material_price = $("#sqft_price").val();
+    } else {
+        material_price = $("#material_price").val();
+    }
     
-    let material_price = $("#material_price").val();
     console.log("sqft",sqft);
     console.log("parseFloat(sqft)",parseFloat(sqft));
     console.log("parseFloat(material_price)",parseFloat(material_price));

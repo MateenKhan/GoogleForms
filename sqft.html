@@ -7,9 +7,10 @@
 
               <div class="input-group mb-3">
                 <label class="input-group-text" for="sqft_type">Product Type</label>
-                <select class="form-select" id="sqft_type">
+                <select class="form-select" id="sqft_type" >
                   <option value="square" selected>Square</option>
                   <option value="round">Round</option>
+                  <option value="sqft">sqft</option>
                 </select>
               </div>
 
@@ -22,6 +23,13 @@
                   <option value="62.5">golden acrylic 1mm - 62.5₹</option>
                   <option value="65">pinewood 25mm - 65₹</option>
                 </select>
+              </div>
+
+              <div class="input-group mb-3" id="sqft_price_div">
+                <span class="input-group-text" id="sqft_Diameter">sqft price - "</span>
+                <input type="number" class="form-control" placeholder="sqft price" aria-label="sqft price"
+                  aria-describedby="Diameter" id="sqft_price" value="1200" />
+                <span class="input-group-text">"</span>
               </div>
 
               <div class="input-group mb-3" id="round_div">
@@ -42,6 +50,13 @@
                   <span class="input-group-text" id="sqft_width_span">Height - "</span>
                   <input id="sqft_width" type="number" class="form-control" placeholder="height" aria-label="Height"
                     aria-describedby="height" />
+                  <span class="input-group-text">"</span>
+                </div>
+
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="sqft_width_span">Quantity - "</span>
+                  <input id="sqft_qty" type="number" class="form-control" placeholder="Quantity" aria-label="Quantity"
+                    aria-describedby="Quantity" value="1" />
                   <span class="input-group-text">"</span>
                 </div>
               </div>
