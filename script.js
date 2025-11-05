@@ -9,7 +9,7 @@ $(document).ready(function () {
     defArr.push($.get('./calculator.html'));
     defArr.push($.get('./invoice.html'));
     defArr.push($.get('./sqft.html'));
-    $.when.apply($, defArr).done(function (response1, response2, response3) {
+    $.when.apply($, defArr).done(function (response1, response2, response3, response4) {
         $('#myTabContent').html(response1[2].responseText + response2[2].responseText+ response3[2].responseText+ response4[2].responseText);
         webPageLoaded();
     });
@@ -46,6 +46,11 @@ function webPageLoaded(){
 
     $("#Calculate").click(function () {
         calculateEpoxyResign();
+    });
+
+
+    $("#sqft_Calculate").click(function () {
+        calculateSqft();
     });
 
     $("#profile-tab").click(function () {
@@ -171,6 +176,20 @@ function calculateEpoxyResign() {
         epoxy_liters = (3.14 * (diameter / 2) * (diameter / 2) * coating) / 1.53;
     }
     $("#e_liters").val(epoxy_liters);
+}
+
+function calculateSqft(){
+    let sqft_type = $("#sqft_type").val();
+    let diameter = $("#sqft_Diameter").val();
+    let length = $("#sqft_length").val();
+    let width = $("#sqft_width").val();
+    let sqft = 0;
+    if (sqft_type == "square") {
+        sqft = (length * width ) / 144;
+    } else {
+        sqft = (3.14 * (diameter / 2) * (diameter / 2) ) / 144;
+    }
+    $("#sqft").val(sqft);
 }
 
 function loadDefauts() {
