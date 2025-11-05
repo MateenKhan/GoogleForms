@@ -75,9 +75,9 @@ function webPageLoaded(){
 
     $("#sqft_type").change(function () {
         if($(this).val()=="sqft"){
-            $("#sqft_price_div").css("display", "block");
+            $("#sqft_price_div").toggle();
         } else {
-            $("#sqft_price_div").css("display", "none");
+            $("#sqft_price_div").toggle();
         }
     });
 
@@ -204,9 +204,7 @@ function calculateSqft(e){
     let width = $("#sqft_width").val();
     let qty = $("#sqft_qty").val();
     let sqft = 0;
-    if (sqft_type == "square") {
-        sqft = qty * ((length * width ) / 144);
-    } else if (sqft_type == "box") {
+    if (sqft_type == "square" || sqft_type == "sqft") {
         sqft = qty * ((length * width ) / 144);
     } else {
         sqft = qty * ((3.14 * (diameter / 2) * (diameter / 2) ) / 144);
