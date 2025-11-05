@@ -77,7 +77,7 @@ function webPageLoaded(){
         if($(this).val()=="sqft"){
             $("#sqft_price_div").removeAttr("style");
         } else {
-            $("#sqft_price_div").attr("style","display:block");
+            $("#sqft_price_div").attr("style","display:none");
         }
     });
 
