@@ -3,72 +3,47 @@
         <div class="row align-items-center">
           <div class="col-sm-12 col-lg-6 calculator-container-1">
             <form id="calculator_form">
-              <h2>Resign Calculator</h2>
+              <h2>Sqft Calculator</h2>
 
               <div class="input-group mb-3">
-                <label class="input-group-text" for="epoxy_type">Product Type</label>
-                <select class="form-select" id="epoxy_type">
+                <label class="input-group-text" for="sqft_type">Product Type</label>
+                <select class="form-select" id="sqft_type">
                   <option value="square" selected>Square</option>
                   <option value="round">Round</option>
                 </select>
               </div>
 
               <div class="input-group mb-3" id="round_div">
-                <span class="input-group-text" id="e_s_Diameter">Diameter - "</span>
+                <span class="input-group-text" id="sqft_Diameter">Diameter - "</span>
                 <input type="number" class="form-control" placeholder="diameter" aria-label="Diameter"
-                  aria-describedby="Diameter" id="e_Diameter" />
+                  aria-describedby="Diameter" id="sqft_Diameter" />
                 <span class="input-group-text">"</span>
               </div>
               <div id="square_div">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="e_s_length">Length - "</span>
-                  <input id="e_length" type="number" class="form-control" placeholder="length" aria-label="Length"
+                  <span class="input-group-text" id="sqft_length">Length - "</span>
+                  <input id="sqft_length" type="number" class="form-control" placeholder="length" aria-label="Length"
                     aria-describedby="length" />
                   <span class="input-group-text">"</span>
                 </div>
 
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="e_s_width">Height - "</span>
-                  <input id="e_width" type="number" class="form-control" placeholder="height" aria-label="Height"
+                  <span class="input-group-text" id="sqft_width">Height - "</span>
+                  <input id="sqft_width" type="number" class="form-control" placeholder="height" aria-label="Height"
                     aria-describedby="height" />
                   <span class="input-group-text">"</span>
                 </div>
               </div>
 
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="width">Thickness - mm</span>
-                <input id="e_coating" type="number" class="form-control" placeholder="coating" aria-label="Coating"
-                  aria-describedby="coating" value="7"/>
-                <span class="input-group-text">"</span>
-              </div>
 
               <div class="input-group mb-3">
-                <button class="btn btn-primary" type="submit" id="Calculate">
+                <button class="btn btn-primary" type="submit" id="sqft_Calculate">
                   Calculate
                 </button>
-                <input id="e_liters" type="text" readonly="true" class="form-control"
-                  placeholder="epoxy liters for your product" aria-label="epoxy liters for your product"
+                <input id="sqft_liters" type="text" readonly="true" class="form-control"
+                  placeholder="Square feet of the product" aria-label="Square feet of the product"
                   aria-describedby="Calculate" />
-                <span class="input-group-text">Grams</span>
-              </div>
-            </form>
-          </div>
-          <div class="col-sm-12 col-lg-6 calculator-container-2">
-            <form id="calculator_form_2">
-              <h2>Price Calculator</h2>
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="width">Price Per Kg</span>
-                <input id="liter_price" type="number" class="form-control" value="4000" />
-              </div>
-
-              <div class="input-group mb-3">
-                <button class="btn btn-primary" type="submit" id="price_calculate">
-                  Calculate
-                </button>
-                <input id="price" type="text" readonly="true" class="form-control" placeholder="estimate price"
-                  aria-label="estimate price" aria-describedby="Calculate" />
-                <span class="input-group-text">₹</span>
+                <span class="input-group-text">Sq ft</span>
               </div>
             </form>
           </div>
