@@ -8,8 +8,9 @@ $(document).ready(function () {
     defArr.push($.get('./home.html'));
     defArr.push($.get('./calculator.html'));
     defArr.push($.get('./invoice.html'));
+    defArr.push($.get('./sqft.html'));
     $.when.apply($, defArr).done(function (response1, response2, response3) {
-        $('#myTabContent').html(response1[2].responseText + response2[2].responseText+ response3[2].responseText);
+        $('#myTabContent').html(response1[2].responseText + response2[2].responseText+ response3[2].responseText+ response4[2].responseText);
         webPageLoaded();
     });
 
