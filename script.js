@@ -217,6 +217,8 @@ function calculateSqft(e){
 function calculatePrice(e){
     calculateSqft(e);
     let sqft = $("#sqft").val();
+    let sqft_type = $("#sqft_type").val();
+    
     let material_price;
     if (sqft_type == "box") {
         material_price = $("#sqft_price").val();
