@@ -73,7 +73,7 @@ function webPageLoaded(){
         O_calculatePrice($(this));
     });
 
-    $(".sqft_type").change(function () {
+    $("#sqft_type").change(function () {
         if($(this).val()=="sqft"){
             $("#sqft_price_div").show();
         } else {
