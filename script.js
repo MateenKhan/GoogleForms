@@ -75,9 +75,9 @@ function webPageLoaded(){
 
     $("#sqft_type").change(function () {
         if($(this).val()=="sqft"){
-            $("#sqft_price_div").show();
+            $("#sqft_price_div").css("display", "block");
         } else {
-            $("#sqft_price_div").hide();
+            $("#sqft_price_div").css("display", "none");
         }
     });
 
@@ -220,7 +220,7 @@ function calculatePrice(e){
     let sqft_type = $("#sqft_type").val();
     
     let material_price;
-    if (sqft_type == "box") {
+    if (sqft_type == "sqft") {
         material_price = $("#sqft_price").val();
     } else {
         material_price = $("#material_price").val();
