@@ -13,6 +13,16 @@
                 </select>
               </div>
 
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="material_price">Product Material</label>
+                <select class="form-select" id="material_price">
+                  <option value="18" selected>MDf 4mm - 18₹</option>
+                  <option value="70" selected>MDf 18mm - 70₹</option>
+                  <option value="62.5">Clear acrylic 3mm - 62.5₹</option>
+                  <option value="62.5">golden acrylic 1mm - 62.5₹</option>
+                </select>
+              </div>
+
               <div class="input-group mb-3" id="round_div">
                 <span class="input-group-text" id="sqft_Diameter">Diameter - "</span>
                 <input type="number" class="form-control" placeholder="diameter" aria-label="Diameter"
@@ -21,14 +31,14 @@
               </div>
               <div id="square_div">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="sqft_length">Length - "</span>
+                  <span class="input-group-text" id="sqft_length_span">Length - "</span>
                   <input id="sqft_length" type="number" class="form-control" placeholder="length" aria-label="Length"
                     aria-describedby="length" />
                   <span class="input-group-text">"</span>
                 </div>
 
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="sqft_width">Height - "</span>
+                  <span class="input-group-text" id="sqft_width_span">Height - "</span>
                   <input id="sqft_width" type="number" class="form-control" placeholder="height" aria-label="Height"
                     aria-describedby="height" />
                   <span class="input-group-text">"</span>
@@ -45,6 +55,43 @@
                   aria-describedby="Calculate" />
                 <span class="input-group-text">Sq ft</span>
               </div>
+
+              <div class="input-group mb-3">
+                <button class="btn btn-primary" type="submit" id="price_Calculate">
+                  Raw Material Price
+                </button>
+                <input id="price_holder" type="text" readonly="true" class="form-control"
+                  placeholder="Product Raw Material Price" aria-label="Product Raw Material Price"
+                  aria-describedby="Price" />
+                <span class="input-group-text">₹</span>
+              </div>
+
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="factor_width_span">multiply - "</span>
+                <input id="factor" type="number" class="form-control" placeholder="3" aria-label="3"
+                  aria-describedby="3" value="3"/>
+                <span class="input-group-text">₹</span>
+              </div>  
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="shipping_width_span">shipping - "</span>
+                <input id="shipping" type="number" class="form-control" placeholder="100" aria-label="100"
+                  aria-describedby="100" value="200"/>
+                <span class="input-group-text">₹</span>
+              </div>  
+
+              <div class="input-group mb-3">
+                <button class="btn btn-primary" type="submit" id="selling_price_Calculate">
+                  Selling Price
+                </button>
+                <input id="selling_price" type="text" readonly="true" class="form-control"
+                  placeholder="Selling Price" aria-label="Selling Price"
+                  aria-describedby="Price" />
+                <span class="input-group-text">₹</span>
+              </div>
+              
+
             </form>
           </div>
         </div>

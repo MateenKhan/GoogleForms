@@ -49,8 +49,16 @@ function webPageLoaded(){
     });
 
 
-    $("#sqft_Calculate").click(function () {
-        calculateSqft();
+    $("#sqft_Calculate").click(function (e) {
+        calculateSqft(e);
+    });
+
+    $("#price_Calculate").click(function (e) {
+        calculatePrice(e);
+    });
+
+    $("#selling_price_Calculate").click(function (e) {
+        calculateSellingPrice(e);
     });
 
     $("#profile-tab").click(function () {
@@ -178,7 +186,8 @@ function calculateEpoxyResign() {
     $("#e_liters").val(epoxy_liters);
 }
 
-function calculateSqft(){
+function calculateSqft(e){
+    e.preventDefault();
     let sqft_type = $("#sqft_type").val();
     let diameter = $("#sqft_Diameter").val();
     let length = $("#sqft_length").val();
@@ -190,6 +199,28 @@ function calculateSqft(){
         sqft = (3.14 * (diameter / 2) * (diameter / 2) ) / 144;
     }
     $("#sqft").val(sqft);
+}
+
+function calculatePrice(e){
+    calculateSqft(e);
+    let sqft = $("#sqft").val();
+    
+    let material_price = $("#material_price").val();
+    console.log("sqft",sqft);
+    console.log("parseFloat(sqft)",parseFloat(sqft));
+    console.log("parseFloat(material_price)",parseFloat(material_price));
+    let final_price = parseFloat(sqft)*parseFloat(material_price);
+    console.log("final_price",final_price);
+
+    $("#price_holder").val(final_price);
+}
+function calculateSellingPrice(e){
+    calculatePrice(e);
+    let raw_material_price = parseFloat($("#price_holder").val());
+    let factor = parseFloat($("#factor").val());
+    let shipping = parseFloat($("#shipping").val());
+    let selling_price = (raw_material_price * factor) + shipping;
+    $("#selling_price").val(selling_price);
 }
 
 function loadDefauts() {
